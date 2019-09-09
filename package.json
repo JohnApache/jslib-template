@@ -1,0 +1,41 @@
+{
+  "name": "jslib-template",
+  "version": "1.0.0",
+  "description": "jslib template for hasaki-cli！",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "nyc --reporter=text mocha --require @babel/register 'test/**/*.{js,jsx}' -t 1000",
+    "test:reporter": "nyc --reporter=lcov --reporter=text mocha --require @babel/register 'test/**/*.{js,jsx}' -t 1000 --reporter=mochawesome",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnApache/jslib-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohnApache/jslib-template/issues"
+  },
+  "homepage": "https://github.com/JohnApache/jslib-template#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "mochawesome": "^4.1.0",
+    "nyc": "^14.1.1",
+    "rollup": "^1.21.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.6.0"
+  }
+}
