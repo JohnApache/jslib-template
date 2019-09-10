@@ -13,6 +13,12 @@ module.exports = {
             name: 'author',
             default: '',
         },
+        {
+            type: 'confrim',
+            message: 'use typescript?',
+            name: 'useTs',
+            default: true,
+        },
     ],
     screener(answers) {
         const include = [];
