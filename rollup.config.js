@@ -2,8 +2,8 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import {terser} from 'rollup-plugin-terser';
+import babel from 'rollup-plugin-babel';
 <% if(locals.useTs){ %>import typescript from 'rollup-plugin-typescript';<%}%>
-<% if(!locals.useTs){ %>import babel from 'rollup-plugin-babel';<%}%>
 
 import path from 'path';
 import os from 'os';
@@ -22,9 +22,9 @@ const standard = {
 		<% if(locals.useTs){ %>typescript(),<%}%>
 		resolve(),
 		commonjs(),
-		<% if(!locals.useTs){ %>babel({
+		babel({
 			runtimeHelpers: true,
-		})<%}%>
+		})
 	]
 };
 
@@ -41,9 +41,9 @@ const minSize = {
 		<% if(locals.useTs){ %>typescript(),<%}%>
 		resolve(),
 		commonjs(),
-		<% if(!locals.useTs){ %>babel({
+		babel({
 			runtimeHelpers: true,
-		})<%}%>
+		})
 		terser({
 			output: {
 				comments: false
