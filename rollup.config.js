@@ -43,7 +43,7 @@ const minSize = {
 		commonjs(),
 		babel({
 			runtimeHelpers: true,
-		})
+		}),
 		terser({
 			output: {
 				comments: false
