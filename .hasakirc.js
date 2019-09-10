@@ -41,9 +41,6 @@ module.exports = {
         }else {
             exclude.push(
                 {
-                    path: './babel.config.js',
-                },
-                {
                     path: './src/add.js',
                 },
                 {
