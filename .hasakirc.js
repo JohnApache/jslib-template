@@ -1,7 +1,11 @@
 module.exports = {
     parseExclude: [],
     parseInclude: [],
-    ignore: [],
+    ignore: [
+        {
+            path: './yarn.lock'
+        }
+    ],
     question: [
         {
             type: 'input',
@@ -13,6 +17,37 @@ module.exports = {
     screener(answers) {
         const include = [];
         const exclude = [];
+        if(!answers.useTs) {
+            exclude.push(
+                {
+                    path: './tsconfig.json',
+                },
+                {
+                    path: './src/add.ts',
+                },
+                {
+                    path: './src/index.ts',
+                },
+                {
+                    path: './test/index.test.ts',
+                }
+            )
+        }else {
+            exclude.push(
+                {
+                    path: './babel.config.js',
+                },
+                {
+                    path: './src/add.js',
+                },
+                {
+                    path: './src/index.js',
+                },
+                {
+                    path: './test/index.test.js',
+                }
+            )
+        }
         return {
             include,
             exclude
