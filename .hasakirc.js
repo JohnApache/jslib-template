@@ -1,6 +1,10 @@
 module.exports = {
     parseExclude: [],
-    parseInclude: [],
+    parseInclude: [
+        {
+            path: './rollup.config.js'
+        }
+    ],
     ignore: [
         {
             path: './yarn.lock'
