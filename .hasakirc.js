@@ -18,7 +18,7 @@ module.exports = {
             default: '',
         },
         {
-            type: 'confrim',
+            type: 'confirm',
             message: 'use typescript?',
             name: 'useTs',
             default: true,
